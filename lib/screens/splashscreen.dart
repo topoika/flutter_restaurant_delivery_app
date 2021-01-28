@@ -15,9 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return SplashScreenView(
       home: PhoneVerification(),
       duration: 5000,
-      imageSize: 100,
-      imageSrc: "assets/images/splash.png",
-      text: "Colorize Text",
+      imageSize: 80,
+      imageSrc: "assets/images/logo.png",
+      text: "Chow Cub",
       textType: TextType.ColorizeAnimationText,
       textStyle: TextStyle(
         fontSize: 40.0,
