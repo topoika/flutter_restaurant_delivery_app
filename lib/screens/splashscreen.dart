@@ -1,7 +1,6 @@
+import 'package:chowcub/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-
-import 'onboarding/screen_one.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -14,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreenView(
-      home: OnboardingScreenOne(),
+      home: HomePage(),
       duration: 8000,
       imageSize: 80,
       imageSrc: "assets/images/logo.png",
