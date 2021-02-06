@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -164,6 +163,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                       flex: 0,
                       child: FlatButton(
+                        onPressed: () {},
                         child: Text(
                           'see all',
                           style: TextStyle(color: Colors.white),
