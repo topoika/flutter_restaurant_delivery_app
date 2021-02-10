@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:chowcub/Pages/SplashScreenPage.dart';
+import 'package:chowcub/Pages/HomePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -21,22 +21,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent, // transparent status bar
-            systemNavigationBarColor: Colors.black, // navigation bar color
-            statusBarIconBrightness: Brightness.dark, // status bar icons' color
-            systemNavigationBarIconBrightness:
-                Brightness.dark, //navigation bar icons' color
+            statusBarColor: Colors.transparent,
+            systemNavigationBarColor: Colors.black,
+            statusBarIconBrightness: Brightness.dark,
+            systemNavigationBarIconBrightness: Brightness.dark,
           ),
-          child: SplashSreen(),
+          child: HomePage(),
         ));
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SplashSreen();
   }
 }
