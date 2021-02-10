@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1061692015844",
+    "project_id": "friendly-joy-284719",
+    "storage_bucket": "friendly-joy-284719.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061692015844:android:e2b8ee336b3f3bcfb418f1",
+        "android_client_info": {
+          "package_name": "com.wiilcrave.chowcub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061692015844-a1njgn5k10pl71m987n6dbpfsb30f4bh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wiilcrave.chowcub",
+            "certificate_hash": "3095f8badbcc6da62a2d6ed323bb701c95575cf4"
+          }
+        },
+        {
+          "client_id": "1061692015844-9rbnio8hk91f5tsk47i4tnocvjjdh94h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpzoAvgu2XWrM4EmLO43Ds8LFWcpPcmZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061692015844-9rbnio8hk91f5tsk47i4tnocvjjdh94h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,3 @@
-
-
 // ignore: camel_case_types
 class Restaurants_List {
   static final getData = [
