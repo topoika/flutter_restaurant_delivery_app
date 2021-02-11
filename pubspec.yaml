@@ -41,10 +41,11 @@ flutter:
   assets:
     - assets/images/
 
+  
   fonts:
-    - family: Dancingscript
+    - family: Teko-Regular
       fonts:
-        - asset: assets/fonts/dancing_script.ttf
+        - asset: assets/fonts/Teko-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

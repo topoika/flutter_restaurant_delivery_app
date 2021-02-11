@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
-                            child: Image.asset('assets/images/splash1.png'),
+                            child: Image.asset('assets/images/logo1.png'),
                           ),
                           SizedBox(
                             height: 8,
@@ -342,7 +342,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
-                            child: Image.asset('assets/images/splash1.png'),
+                            child: Image.asset('assets/images/drinks.png'),
                           ),
                           SizedBox(
                             height: 8,
@@ -370,7 +370,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
-                            child: Image.asset('assets/images/splash1.png'),
+                            child: Image.asset('assets/images/chicken.png'),
                           ),
                           SizedBox(
                             height: 8,
@@ -398,7 +398,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
-                            child: Image.asset('assets/images/splash1.png'),
+                            child: Image.asset('assets/images/burger.png'),
                           ),
                           SizedBox(
                             height: 8,
@@ -426,7 +426,7 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
-                            child: Image.asset('assets/images/splash1.png'),
+                            child: Image.asset('assets/images/cake.png'),
                           ),
                           SizedBox(
                             height: 8,
@@ -451,22 +451,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-/*
-FlatButton(
-                      child: const Text('Sign out'),
-                      textColor: Theme.of(context).buttonColor,
-                      onPressed: () async {
-                        // ignore: await_only_futures
-                        final User user = await _auth.currentUser;
-                        if (user == null) {
-                          Scaffold.of(context).showSnackBar(const SnackBar(
-                            content: Text('No one has signed in.'),
-                          ));
-                          return;
-                        }
-                        await _auth.signOut();
-                        final String uid = user.uid;
-                        Scaffold.of(context).showSnackBar(SnackBar(
-                          content: Text(uid + ' has successfully signed out.'),
-                        )*/

@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:chowcub/Pages/HomePage.dart';
+import 'package:chowcub/Pages/SplashScreenPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             statusBarIconBrightness: Brightness.dark,
             systemNavigationBarIconBrightness: Brightness.dark,
           ),
-          child: HomePage(),
+          child: SplashSreen(),
         ));
   }
 }
