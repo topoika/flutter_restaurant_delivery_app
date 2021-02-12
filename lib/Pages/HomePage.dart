@@ -13,10 +13,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<String> imageUrl = [
+    'assets/images/rest1.png',
+    'assets/images/rest2.png',
+    'assets/images/rest3.png',
+    'assets/images/rest4.png',
+    'assets/images/rest5.png',
+    'assets/images/rest6.png',
+    'assets/images/rest7.png',
+  ];
+
+  List<String> iconUrl = [
     'assets/images/logo1.png',
-    'assets/images/logo1.png',
-    'assets/images/logo1.png',
-    'assets/images/logo1.png'
+    'assets/images/coffee.png',
+    'assets/images/pizza.png',
+    'assets/images/drinks.png',
+    'assets/images/chicken.png',
+    'assets/images/burger.png',
+    'assets/images/cake.png'
   ];
 
   int _value = 0;
@@ -24,25 +37,45 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.backColor,
-      body: Container(
-        //padding: EdgeInsets.symmetric(horizontal: 30),
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              alignment: Alignment.topLeft,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              height: 180,
+              padding: EdgeInsets.fromLTRB(15, 30, 20, 0),
+              height: 190,
               width: double.infinity,
               decoration: BoxDecoration(color: MyColors.primaryColor),
               child: Column(
                 children: [
                   Container(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'DELIVERING  TO',
-                      style: TextStyle(color: Colors.black87),
-                      textAlign: TextAlign.left,
+                    height: 45,
+                    child: Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            //Drawer Menu
+                          },
+                          icon: Icon(
+                            Icons.menu,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Container(
+                          child: Text(
+                            'Delivery  To',
+                            style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 28,
+                                fontFamily: MyColors.primaryFont),
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 5,
                   ),
                   Container(
                     child: Row(
@@ -51,6 +84,7 @@ class _HomePageState extends State<HomePage> {
                           Icons.location_on_outlined,
                           color: Colors.white,
                         ),
+                        SizedBox(width: 10),
                         DropdownButton(
                             value: _value,
                             items: [
@@ -87,14 +121,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 14,
+                    height: 8,
                   ),
                   Row(
                     children: [
                       Expanded(
                         flex: 1,
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
                           height: 40,
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -111,8 +145,9 @@ class _HomePageState extends State<HomePage> {
                                 icon: Icon(Icons.search_outlined),
                                 hintText: 'Search for Foods or Restaurants...',
                                 hintStyle: TextStyle(
-                                    color: Colors.black87,
-                                    fontFamily: MyColors.primaryFont)),
+                                  fontSize: 19,
+                                  color: Colors.black87,
+                                )),
                           ),
                         ),
                       ),
@@ -135,25 +170,30 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-                padding: EdgeInsets.fromLTRB(20, 15, 0, 20),
-                height: 140,
-                decoration: BoxDecoration(color: MyColors.backColor),
-                child: SingleChildScrollView(
-                  dragStartBehavior: DragStartBehavior.start,
-                  scrollDirection: Axis.horizontal,
-                  clipBehavior: Clip.hardEdge,
-                  child: Row(
-                    children: [
-                      restaurantsTiles(imageUrl[0], 'McDonalds'),
-                      restaurantsTiles(imageUrl[1], 'McDonalds'),
-                      restaurantsTiles(imageUrl[2], 'McDonalds'),
-                      restaurantsTiles(imageUrl[3], 'McDonalds'),
-                    ],
-                  ),
-                )),
+              padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+              height: 120,
+              decoration: BoxDecoration(color: MyColors.backColor),
+              child: SingleChildScrollView(
+                dragStartBehavior: DragStartBehavior.start,
+                scrollDirection: Axis.horizontal,
+                clipBehavior: Clip.hardEdge,
+                child: Row(
+                  children: [
+                    restaurantsTiles(imageUrl[0], 'Glovo'),
+                    restaurantsTiles(imageUrl[1], 'McDonalds'),
+                    restaurantsTiles(imageUrl[2], 'Jumia'),
+                    restaurantsTiles(imageUrl[3], 'McDonalds'),
+                    restaurantsTiles(imageUrl[4], 'McDonalds'),
+                    restaurantsTiles(imageUrl[5], 'McDonalds'),
+                    restaurantsTiles(imageUrl[6], 'Ukrine'),
+                  ],
+                ),
+              ),
+            ),
             Container(
+              color: MyColors.backColor,
               padding: EdgeInsets.symmetric(horizontal: 20),
-              height: 40,
+              height: 35,
               child: Row(
                 children: [
                   Expanded(
@@ -195,224 +235,184 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              height: 120,
+              color: MyColors.backColor,
+              padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+              height: 105,
               child: SingleChildScrollView(
                 dragStartBehavior: DragStartBehavior.start,
                 scrollDirection: Axis.horizontal,
                 clipBehavior: Clip.hardEdge,
                 child: Row(
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/logo1.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'All',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    ),
+                    categoriesRow(iconUrl[0], 'All'),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/coffee.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Coffee',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    ),
+                    categoriesRow(iconUrl[1], 'coffee'),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/pizza.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Piza',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    ),
+                    categoriesRow(iconUrl[2], 'Pizza'),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/drinks.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Drinks',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    ),
+                    categoriesRow(iconUrl[3], 'Drinks'),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/chicken.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Chicken',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    ),
+                    categoriesRow(iconUrl[4], 'Chicken'),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/burger.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Burger',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    ),
+                    categoriesRow(iconUrl[5], 'Burger'),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(5),
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset('assets/images/cake.png'),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Cakes',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: MyColors.primaryFont),
-                          )
-                        ],
-                      ),
-                    )
+                    categoriesRow(iconUrl[6], 'Cake'),
+                    SizedBox(
+                      width: 20,
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              color: MyColors.backColor,
+              height: 35,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Products Ordered',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: MyColors.primaryFont,
+                          fontSize: 20),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: InkWell(
+                      onTap: () {
+                        //
+                      },
+                      child: Row(
+                        children: [
+                          Text(
+                            'View all',
+                            style: TextStyle(
+                                fontFamily: MyColors.primaryFont,
+                                color: MyColors.primaryColor,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Icon(
+                            Icons.double_arrow_rounded,
+                            size: 15,
+                            color: MyColors.primaryColor,
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+              height: 200,
+              decoration: BoxDecoration(color: MyColors.backColor),
+              child: SingleChildScrollView(
+                dragStartBehavior: DragStartBehavior.start,
+                scrollDirection: Axis.horizontal,
+                clipBehavior: Clip.hardEdge,
+                child: Row(
+                  children: [
+                    dishesTiles(imageUrl[0], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    dishesTiles(imageUrl[1], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    dishesTiles(imageUrl[2], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    dishesTiles(imageUrl[3], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    dishesTiles(imageUrl[4], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    dishesTiles(imageUrl[5], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    dishesTiles(imageUrl[6], 'Fried Noodles & Fries',
+                        'Seafoods & Fries'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              color: MyColors.backColor,
+              height: 35,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Fevourite Restaurants',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: MyColors.primaryFont,
+                          fontSize: 20),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: InkWell(
+                      onTap: () {
+                        //
+                      },
+                      child: Row(
+                        children: [
+                          Text(
+                            'View all',
+                            style: TextStyle(
+                                fontFamily: MyColors.primaryFont,
+                                color: MyColors.primaryColor,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Icon(
+                            Icons.double_arrow_rounded,
+                            size: 15,
+                            color: MyColors.primaryColor,
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

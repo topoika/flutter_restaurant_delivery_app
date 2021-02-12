@@ -1,67 +1,33 @@
 import 'package:chowcub/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-Widget homeCategoriesTile(
-    String imgUrl, String userName, String msg, String date, bool seen) {
-  return InkWell(
-    onTap: () {},
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(imgUrl),
-            radius: 28.0,
+Widget categoriesRow(String iconUrl, String categoryName) {
+  return Container(
+    child: Column(
+      children: [
+        Container(
+          padding: EdgeInsets.all(5),
+          height: 70,
+          width: 70,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Colors.white,
           ),
-          SizedBox(
-            width: 8.0,
-          ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        userName,
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Text(date),
-                  ],
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Row(
-                  children: [
-                    Expanded(child: Text(userName)),
-                    if (seen)
-                      Icon(
-                        Icons.check_circle,
-                        size: 18.0,
-                        color: Colors.green,
-                      ),
-                    if (!seen)
-                      Icon(
-                        Icons.check_circle_outline,
-                        color: Colors.grey,
-                        size: 18.0,
-                      ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+          child: Image.asset(iconUrl),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Text(
+          categoryName,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
+              fontFamily: MyColors.primaryFont),
+        )
+      ],
     ),
   );
 }
@@ -94,6 +60,77 @@ Widget restaurantsTiles(String imgUrl, String restaurantName) {
             ),
           ),
         ),
+      ],
+    ),
+  );
+}
+
+Widget dishesTiles(String imgUrl, String dishName, String dishCategory) {
+  return Container(
+    height: 400,
+    width: 120,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+    ),
+    child: Column(
+      children: [
+        Container(
+          height: 120,
+          width: 140,
+          decoration: BoxDecoration(
+              //borderRadius: BorderRadius.all(Radius.circular(8)),
+              color: Colors.red,
+              image: DecorationImage(
+                image: AssetImage(imgUrl),
+                fit: BoxFit.cover,
+              )),
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              Text(
+                dishName,
+                textAlign: TextAlign.center,
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: MyColors.primaryFont),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 0,
+                    child: Icon(
+                      Icons.house,
+                      size: 18,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      dishCategory,
+                      softWrap: true,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontFamily: MyColors.primaryFont,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        )
       ],
     ),
   );
