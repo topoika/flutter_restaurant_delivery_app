@@ -1,6 +1,5 @@
 import 'package:chowcub/Authentication/ForgetPassword.dart';
 import 'package:chowcub/Authentication/SignUpPage.dart';
-import 'package:chowcub/Pages/HomePage.dart';
 import 'package:chowcub/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -199,12 +198,7 @@ class _SignInPageState extends State<SignInPage> {
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: MyColors.primaryColor),
                     child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage()));
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Sign In with Google',
                         style: TextStyle(

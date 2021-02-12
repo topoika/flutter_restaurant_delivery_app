@@ -1,4 +1,5 @@
 import 'package:chowcub/Authentication/PasswordVerification.dart';
+import 'package:chowcub/Pages/HomePage.dart';
 import 'package:chowcub/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -117,6 +118,34 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                             },
                             child: Text(
                               'Next',
+                              style: TextStyle(
+                                  fontFamily: MyColors.primaryFont,
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Container(
+                          height: 40,
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              color: MyColors.primaryColor),
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()));
+                            },
+                            child: Text(
+                              'Home Page',
                               style: TextStyle(
                                   fontFamily: MyColors.primaryFont,
                                   color: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:chowcub/theme.dart';
+import 'package:chowcub/widgets/tiles_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -11,6 +12,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<String> imageUrl = [
+    'assets/images/logo1.png',
+    'assets/images/logo1.png',
+    'assets/images/logo1.png',
+    'assets/images/logo1.png'
+  ];
+
   int _value = 0;
   @override
   Widget build(BuildContext context) {
@@ -28,9 +36,6 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(color: MyColors.primaryColor),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 45,
-                  ),
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -139,89 +144,10 @@ class _HomePageState extends State<HomePage> {
                   clipBehavior: Clip.hardEdge,
                   child: Row(
                     children: [
-                      Stack(children: [
-                        Container(
-                          height: 170,
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8)),
-                              color: Colors.red,
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlc3RhdXJhbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            'Fuck off',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        )
-                      ]),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        child: Container(
-                          height: 170,
-                          width: 300,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                                  fit: BoxFit.cover)),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        child: Container(
-                          height: 170,
-                          width: 300,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
-                                  fit: BoxFit.cover)),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 150,
-                              width: 330,
-                              decoration: BoxDecoration(
-                                  color: Colors.green,
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                        "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-                                      ),
-                                      fit: BoxFit.cover)),
-                            ),
-                            Container(
-                              alignment: Alignment.bottomCenter,
-                              child: Text(
-                                'McDonalds',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: MyColors.primaryFont,
-                                    fontSize: 20),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                      restaurantsTiles(imageUrl[0], 'McDonalds'),
+                      restaurantsTiles(imageUrl[1], 'McDonalds'),
+                      restaurantsTiles(imageUrl[2], 'McDonalds'),
+                      restaurantsTiles(imageUrl[3], 'McDonalds'),
                     ],
                   ),
                 )),
@@ -284,6 +210,8 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
                             child: Image.asset('assets/images/logo1.png'),
@@ -312,9 +240,11 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
-                            child: Image.asset('assets/images/splash1.png'),
+                            child: Image.asset('assets/images/coffee.png'),
                           ),
                           SizedBox(
                             height: 8,
@@ -340,6 +270,38 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              color: Colors.white,
+                            ),
+                            child: Image.asset('assets/images/pizza.png'),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            'Piza',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: MyColors.primaryFont),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
                             child: Image.asset('assets/images/drinks.png'),
@@ -368,6 +330,8 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
                             child: Image.asset('assets/images/chicken.png'),
@@ -396,6 +360,8 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
                             child: Image.asset('assets/images/burger.png'),
@@ -424,6 +390,8 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                               color: Colors.white,
                             ),
                             child: Image.asset('assets/images/cake.png'),
