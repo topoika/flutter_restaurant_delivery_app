@@ -413,6 +413,55 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            Container(
+              padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
+              height: 200,
+              decoration: BoxDecoration(color: MyColors.backColor),
+              child: SingleChildScrollView(
+                dragStartBehavior: DragStartBehavior.start,
+                scrollDirection: Axis.horizontal,
+                clipBehavior: Clip.hardEdge,
+                child: Row(
+                  children: [
+                    favoriteRestaurantsTiles(
+                        imageUrl[0], 'McDonalds', "\$\$\$\$", 'USA Amstantdam'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    favoriteRestaurantsTiles(
+                        imageUrl[1], 'Pronto', '\$\$\$', 'Nairobi Moi Avenue'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    favoriteRestaurantsTiles(
+                        imageUrl[2], 'Triple f', '\$\$\$', 'Kitengela Kajiado'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    favoriteRestaurantsTiles(
+                        imageUrl[3], 'Pine Breeze', '\$', 'Athi River Lukenya'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    favoriteRestaurantsTiles(imageUrl[4], 'Cafeteria',
+                        '\$\$\$\$', 'Athi River Lukenya'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    favoriteRestaurantsTiles(imageUrl[5], 'Wiilrave',
+                        '\$\$\$\$', 'Athi River Lukenya'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    favoriteRestaurantsTiles(
+                        imageUrl[6], 'Savannah', '\$\$', 'Olulunga Narok'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
