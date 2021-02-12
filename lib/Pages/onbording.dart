@@ -64,7 +64,7 @@ class _OnbordingState extends State<Onbording> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 10),
                           Text(
                             contents[i].discription,
                             textAlign: TextAlign.center,
@@ -83,7 +83,7 @@ class _OnbordingState extends State<Onbording> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
+            padding: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(

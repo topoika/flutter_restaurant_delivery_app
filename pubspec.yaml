@@ -43,9 +43,16 @@ flutter:
 
   
   fonts:
-    - family: Teko-Regular
+    - family: ArchivoNarrow
       fonts:
-        - asset: assets/fonts/Teko-Regular.ttf
+        - asset: assets/fonts/ArchivoNarrow-Bold.ttf
+        - asset: assets/fonts/ArchivoNarrow-BoldItalic.ttf
+        - asset: assets/fonts/ArchivoNarrow-Italic.ttf
+        - asset: assets/fonts/ArchivoNarrow-Medium.ttf
+        - asset: assets/fonts/ArchivoNarrow-MediumItalic.ttf
+        - asset: assets/fonts/ArchivoNarrow-Regular.ttf
+        - asset: assets/fonts/ArchivoNarrow-SemiBold.ttf
+        - asset: assets/fonts/ArchivoNarrow-SemiBoldItalic.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

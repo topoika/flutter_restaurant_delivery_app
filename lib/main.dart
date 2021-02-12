@@ -21,11 +21,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            systemNavigationBarColor: Colors.black,
-            statusBarIconBrightness: Brightness.dark,
-            systemNavigationBarIconBrightness: Brightness.dark,
-          ),
+              statusBarColor: Colors.transparent,
+              systemNavigationBarColor: Colors.black,
+              statusBarIconBrightness: Brightness.light,
+              systemNavigationBarIconBrightness: Brightness.light),
           child: SplashSreen(),
         ));
   }
